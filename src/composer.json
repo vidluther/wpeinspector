@@ -2,6 +2,7 @@
     "require": {
         "guzzlehttp/guzzle": "^6.0",
         "vlucas/phpdotenv": "^5.3",
-        "google/apiclient": "^2.0"
+        "google/apiclient": "^2.0",
+        "league/csv": "^9.7"
     }
 }
