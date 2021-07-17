@@ -1,5 +1,5 @@
-# WPE Inspector
-WP Engine Inspector 
+# WPH Inspector
+WordPress Host Inspector 
 
 ## What is it? 
 
