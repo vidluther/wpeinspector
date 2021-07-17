@@ -1,4 +1,6 @@
+.DS_Store
 .env
 src/vendor
 composer.lock
 src/.env
+*.csv
