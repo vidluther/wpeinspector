@@ -1,6 +1,10 @@
+2021-07-17 16:25:03 -0500 Vid Luther 
+
+	* add dependency for symfony/yaml (HEAD -> main)
+
 2021-07-17 16:24:39 -0500 Vid Luther 
 
-	* get a list of installs directly, and start building a list of installs to monitor (HEAD -> main)
+	* get a list of installs directly, and start building a list of installs to monitor
 
 2021-07-17 16:06:41 -0500 Vid Luther 
 
