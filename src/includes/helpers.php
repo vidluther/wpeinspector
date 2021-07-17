@@ -33,6 +33,22 @@ class Api
         return $this->status;
     }
 
+    /**
+     * Get a collection of installs at WPE
+     */
+    public function getInstalls()
+    {
+        $response = $this->request('GET', 'installs');
+        if ($this->checkIfResponseIsValid($response)) {
+            $body = $response->getBody();
+            $installsCollection = json_decode($body);
+            $installResults = $installsCollection->results;
+            return $installResults;
+        } else {
+            return false;
+        }
+
+    }
     public function getSites()
     {
         // Get a list of sites at WPE, this will give us a list of installs automatically.

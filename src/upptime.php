@@ -1,9 +1,12 @@
 <?php
-
+/**
+ * This file will generate the necessary YAML needed for upptimerc.yml
+ * This will only create the YAML string if the site is in production and has a primary
+ * domain attached to it.
+ */
 require 'vendor/autoload.php';
 require_once __DIR__ . '/config.php';
 
-use League\Csv\Writer;
 use Wpe\Api as wpe;
 
 $client = new Wpe();
@@ -15,39 +18,24 @@ if ($client->checkStatus() === false) {
 
 }
 
-$sites = $client->getSites();
+$installs = $client->getInstalls();
 
-$csvHeader = ['account_name', 'site_id', 'site name', 'install id', 'install name', 'install environment', 'install cname', 'php version', 'is multisite', 'primary domain'];
-//we create the CSV into memory
-$csv = Writer::createFromFileObject(new SplTempFileObject());
+$installsToMonitor = array();
 
-//insert the header
-$csv->insertOne($csvHeader);
+// iterate through installs
+foreach ($installs as $install) {
 
-$csvRecords = array();
-foreach ($sites as $site) {
-    // This is another call to the API.. we should probably make a local map
-    // of account ids to account names
-    $account_name = $client->getAccountName($site->account->id);
-    $site_id = $site->id;
-    $site_name = $site->name;
-    $installs = $site->installs;
+    $install_id = $install->id;
+    $install_name = $install->name;
+    $install_env = $install->environment;
+    $install_cname = $install->cname;
+    $install_phpversion = $install->php_version;
+    $install_is_multisite = $install->is_multisite;
+    $primary_domain = $install->primary_domain;
 
-    // iterate through installs
-    foreach ($installs as $install) {
-        $install_id = $install->id;
-        $install_name = $install->name;
-        $install_env = $install->environment;
-        $install_cname = $install->cname;
-        $install_phpversion = $install->php_version;
-        $install_is_multisite = $install->is_multisite;
-        // If we want to know the domain associated with the site, we need to call /installs/$install_id at WPE
-        $install_primary_domain = $client->getInstallDomain($install_id);
-        //$install_primary_domain = "doo.com"; // this was added here just to speed up execution during testing.
-        $csvRecords[] = [$account_name, $site_id, $site_name, $install_id, $install_name, $install_env, $install_cname, $install_phpversion, $install_is_multisite, $install_primary_domain];
-
+    if ($install->environment === 'production') {
+        echo "Adding $install_name with $primary_domain to the monitor" . PHP_EOL;
     }
 }
-$csv->insertAll($csvRecords);
-$csv->output('wpesites.csv');
+
 die;
