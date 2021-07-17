@@ -1,0 +1,5 @@
+# Copy this file to .env , and then change the variables as needed.
+# Variables that will configure the containers properly.
+
+PROJECT_NAME=wpemanager
+PROJECT_FILES="./src/"
