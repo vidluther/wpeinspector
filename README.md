@@ -60,5 +60,7 @@ This assumes you have composer installed and working on your system.
 - Clone the repo
 - cd cloned_repo_directory/src
 - composer install
+- cp env.example .env 
+- edit the .env file with your credentials [that you can get by going here](https://my.wpengine.com/api_access)
 - php index.php > foo.csv 
 - open your CSV and wonder what you can do with that data.
