@@ -1,4 +1,4 @@
-# WPH Inspector
+# WP Host Inspector
 WordPress Host Inspector 
 
 ## What is it? 
