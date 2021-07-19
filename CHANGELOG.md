@@ -1,6 +1,10 @@
+2021-07-18 23:53:27 -0500 Vid Luther 
+
+	* script to make it output the right yaml for upptime monitoring (HEAD -> main)
+
 2021-07-17 16:25:03 -0500 Vid Luther 
 
-	* add dependency for symfony/yaml (HEAD -> main)
+	* add dependency for symfony/yaml
 
 2021-07-17 16:24:39 -0500 Vid Luther 
 

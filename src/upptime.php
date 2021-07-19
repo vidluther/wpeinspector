@@ -7,6 +7,7 @@
 require 'vendor/autoload.php';
 require_once __DIR__ . '/config.php';
 
+use Symfony\Component\Yaml\Yaml;
 use Wpe\Api as wpe;
 
 $client = new Wpe();
@@ -20,10 +21,17 @@ if ($client->checkStatus() === false) {
 
 $installs = $client->getInstalls();
 
-$installsToMonitor = array();
+$dumped = null;
+
+$dumped = Yaml::dump(['site' => ''], 2, 4, Yaml::DUMP_OBJECT_AS_MAP);
+#$installsToMonitor['sites'] = array();
+
+#$yamlString = "sites:\n";
 
 // iterate through installs
 foreach ($installs as $install) {
+
+    #print_r($install);die;
 
     $install_id = $install->id;
     $install_name = $install->name;
@@ -34,8 +42,25 @@ foreach ($installs as $install) {
     $primary_domain = $install->primary_domain;
 
     if ($install->environment === 'production') {
-        echo "Adding $install_name with $primary_domain to the monitor" . PHP_EOL;
+        $object = new \stdClass();
+        $object->name = $install_name;
+        $object->url = $primary_domain;
+        // echo "Adding $install_name with $primary_domain to the monitor ($install_env)" . PHP_EOL;
+
+        $installsToMonitor[] = array('name' => $install->name, 'url' => $install->primary_domain);
     }
+    $site = new \stdClass();
+    $site->name = $install->name;
+    $site->url = 'https://' . $install->primary_domain;
+    #   $dumped .= Yaml::dump($site, 2, 4, Yaml::DUMP_OBJECT_AS_MAP);
 }
 
-die;
+#print_r($site);die;
+#$dumped = Yaml::dump(['site' => $site], 2, 4, Yaml::DUMP_OBJECT_AS_MAP);
+
+#$dumped .= Yaml::dump($site, 2, 4, Yaml::DUMP_OBJECT_AS_MAP);
+
+$yaml = Yaml::dump($installsToMonitor); //, 2, 4, Yaml::DUMP_OBJECT_AS_MAP);
+#print_r($installsToMonitor);
+#echo $dumped;
+echo $yaml;
