@@ -1,6 +1,10 @@
+2021-07-19 00:07:23 -0500 Vid Luther 
+
+	* trying to use fix as recommended on stack overflow (HEAD -> main)
+
 2021-07-18 23:53:27 -0500 Vid Luther 
 
-	* script to make it output the right yaml for upptime monitoring (HEAD -> main)
+	* script to make it output the right yaml for upptime monitoring (origin/main, origin/HEAD)
 
 2021-07-17 16:25:03 -0500 Vid Luther 
 
@@ -16,7 +20,7 @@
 
 2021-07-17 16:00:55 -0500 Vid Luther 
 
-	* Adding Account name, instead of account id to the CSV (origin/main, origin/HEAD)
+	* Adding Account name, instead of account id to the CSV
 
 2021-07-17 15:23:07 -0500 Vid Luther 
 

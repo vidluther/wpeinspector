@@ -21,12 +21,8 @@ if ($client->checkStatus() === false) {
 
 $installs = $client->getInstalls();
 
-$dumped = null;
-
-$dumped = Yaml::dump(['site' => ''], 2, 4, Yaml::DUMP_OBJECT_AS_MAP);
-#$installsToMonitor['sites'] = array();
-
-#$yamlString = "sites:\n";
+// $installsToMonitor['sites'] = array();
+$installsToMonitor = ['sites' => []];
 
 // iterate through installs
 foreach ($installs as $install) {
@@ -47,18 +43,15 @@ foreach ($installs as $install) {
         $object->url = $primary_domain;
         // echo "Adding $install_name with $primary_domain to the monitor ($install_env)" . PHP_EOL;
 
-        $installsToMonitor[] = array('name' => $install->name, 'url' => $install->primary_domain);
+        #$installsToMonitor[] = array('name' => $install->name, 'url' => $install->primary_domain);
+
+        $installsToMonitor['sites'][] = [
+            'name' => $install->name,
+            'primary_domain' => $install->primary_domain,
+        ];
     }
-    $site = new \stdClass();
-    $site->name = $install->name;
-    $site->url = 'https://' . $install->primary_domain;
-    #   $dumped .= Yaml::dump($site, 2, 4, Yaml::DUMP_OBJECT_AS_MAP);
+
 }
-
-#print_r($site);die;
-#$dumped = Yaml::dump(['site' => $site], 2, 4, Yaml::DUMP_OBJECT_AS_MAP);
-
-#$dumped .= Yaml::dump($site, 2, 4, Yaml::DUMP_OBJECT_AS_MAP);
 
 $yaml = Yaml::dump($installsToMonitor); //, 2, 4, Yaml::DUMP_OBJECT_AS_MAP);
 #print_r($installsToMonitor);
