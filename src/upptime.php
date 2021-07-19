@@ -47,13 +47,15 @@ foreach ($installs as $install) {
 
         $installsToMonitor['sites'][] = [
             'name' => $install->name,
-            'primary_domain' => $install->primary_domain,
+            'url' => 'https://'.$install->primary_domain,
         ];
     }
 
 }
 
-$yaml = Yaml::dump($installsToMonitor); //, 2, 4, Yaml::DUMP_OBJECT_AS_MAP);
+echo yaml_emit($installsToMonitor); 
+
+#$yaml = Yaml::dump($installsToMonitor); //, 2, 4, Yaml::DUMP_OBJECT_AS_MAP);
 #print_r($installsToMonitor);
 #echo $dumped;
-echo $yaml;
+#echo $yaml;
