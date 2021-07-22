@@ -1,10 +1,30 @@
+2021-07-22 14:50:32 -0500 Vid Luther 
+
+	* scripts that will actually get usage stats from wPE engine, as long as you're logged into the my.wpe api (HEAD -> usage)
+
+2021-07-22 14:49:03 -0500 Vid Luther 
+
+	* added csvs folder.. should remain empty within git though
+
+2021-07-22 14:46:43 -0500 Vid Luther 
+
+	* ignore the csvs/* files
+
+2021-07-22 14:45:55 -0500 Vid Luther 
+
+	* logging site_id into the CSV as well
+
+2021-07-19 00:43:41 -0500 Vid Luther 
+
+	* Yaml output is proper, with yaml_emit.. (origin/main, origin/HEAD, main)
+
 2021-07-19 00:07:23 -0500 Vid Luther 
 
-	* trying to use fix as recommended on stack overflow (HEAD -> main)
+	* trying to use fix as recommended on stack overflow
 
 2021-07-18 23:53:27 -0500 Vid Luther 
 
-	* script to make it output the right yaml for upptime monitoring (origin/main, origin/HEAD)
+	* script to make it output the right yaml for upptime monitoring
 
 2021-07-17 16:25:03 -0500 Vid Luther 
 

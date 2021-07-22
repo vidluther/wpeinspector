@@ -3,4 +3,6 @@
 src/vendor
 composer.lock
 src/.env
+src/csvs/*
 *.csv
+csvs/*
