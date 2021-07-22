@@ -1,6 +1,10 @@
+2021-07-22 14:50:32 -0500 Vid Luther 
+
+	* scripts that will actually get usage stats from wPE engine, as long as you're logged into the my.wpe api (HEAD -> usage)
+
 2021-07-22 14:49:03 -0500 Vid Luther 
 
-	* added csvs folder.. should remain empty within git though (HEAD -> usage)
+	* added csvs folder.. should remain empty within git though
 
 2021-07-22 14:46:43 -0500 Vid Luther 
 
