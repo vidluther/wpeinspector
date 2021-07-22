@@ -17,7 +17,7 @@ if ($client->checkStatus() === false) {
 
 $sites = $client->getSites();
 
-$csvHeader = ['account_name', 'site_id', 'site name', 'install id', 'install name', 'install environment', 'install cname', 'php version', 'is multisite', 'primary domain'];
+$csvHeader = ['account_name', 'account_id', 'site_id', 'site name', 'install id', 'install name', 'install environment', 'install cname', 'php version', 'is multisite', 'primary domain'];
 //we create the CSV into memory
 $csv = Writer::createFromFileObject(new SplTempFileObject());
 
@@ -44,7 +44,7 @@ foreach ($sites as $site) {
         // If we want to know the domain associated with the site, we need to call /installs/$install_id at WPE
         $install_primary_domain = $client->getInstallDomain($install_id);
         //$install_primary_domain = "doo.com"; // this was added here just to speed up execution during testing.
-        $csvRecords[] = [$account_name, $site_id, $site_name, $install_id, $install_name, $install_env, $install_cname, $install_phpversion, $install_is_multisite, $install_primary_domain];
+        $csvRecords[] = [$account_name, $site->account->id, $site_id, $site_name, $install_id, $install_name, $install_env, $install_cname, $install_phpversion, $install_is_multisite, $install_primary_domain];
 
     }
 }

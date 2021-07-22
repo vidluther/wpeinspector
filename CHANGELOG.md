@@ -1,10 +1,18 @@
+2021-07-22 14:45:55 -0500 Vid Luther 
+
+	* logging site_id into the CSV as well (HEAD -> usage)
+
+2021-07-19 00:43:41 -0500 Vid Luther 
+
+	* Yaml output is proper, with yaml_emit.. (origin/main, origin/HEAD, main)
+
 2021-07-19 00:07:23 -0500 Vid Luther 
 
-	* trying to use fix as recommended on stack overflow (HEAD -> main)
+	* trying to use fix as recommended on stack overflow
 
 2021-07-18 23:53:27 -0500 Vid Luther 
 
-	* script to make it output the right yaml for upptime monitoring (origin/main, origin/HEAD)
+	* script to make it output the right yaml for upptime monitoring
 
 2021-07-17 16:25:03 -0500 Vid Luther 
 
