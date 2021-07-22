@@ -1,6 +1,10 @@
+2021-07-22 14:46:43 -0500 Vid Luther 
+
+	* ignore the csvs/* files (HEAD -> usage)
+
 2021-07-22 14:45:55 -0500 Vid Luther 
 
-	* logging site_id into the CSV as well (HEAD -> usage)
+	* logging site_id into the CSV as well
 
 2021-07-19 00:43:41 -0500 Vid Luther 
 
