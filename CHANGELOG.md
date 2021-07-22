@@ -1,6 +1,10 @@
+2021-07-22 14:49:03 -0500 Vid Luther 
+
+	* added csvs folder.. should remain empty within git though (HEAD -> usage)
+
 2021-07-22 14:46:43 -0500 Vid Luther 
 
-	* ignore the csvs/* files (HEAD -> usage)
+	* ignore the csvs/* files
 
 2021-07-22 14:45:55 -0500 Vid Luther 
 
