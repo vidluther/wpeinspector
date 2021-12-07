@@ -1,6 +1,10 @@
+2021-12-07 17:46:13 -0600 Vid Luther 
+
+	* updated packages (HEAD -> main)
+
 2021-07-22 14:50:32 -0500 Vid Luther 
 
-	* scripts that will actually get usage stats from wPE engine, as long as you're logged into the my.wpe api (HEAD -> usage)
+	* scripts that will actually get usage stats from wPE engine, as long as you're logged into the my.wpe api
 
 2021-07-22 14:49:03 -0500 Vid Luther 
 
@@ -16,7 +20,7 @@
 
 2021-07-19 00:43:41 -0500 Vid Luther 
 
-	* Yaml output is proper, with yaml_emit.. (origin/main, origin/HEAD, main)
+	* Yaml output is proper, with yaml_emit..
 
 2021-07-19 00:07:23 -0500 Vid Luther 
 
