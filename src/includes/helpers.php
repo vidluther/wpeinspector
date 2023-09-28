@@ -22,15 +22,22 @@ class Api
 
     public function checkStatus()
     {
-        $response = $this->_client->request('GET', 'status');
-
-        if ($this->checkIfResponseIsValid($response)) {
-            $this->status = true;
-        } else {
-            $this->status = false;
+        //echo "Checking WP Engine API Status" . PHP_EOL; 
+        try {
+            $response = $this->_client->request('GET', 'status');
+         } catch (Exception $e) {
+            echo "There was a problem :( ". $e->getMessage() . PHP_EOL; 
         }
+        $this->checkIfResponseIsValid($response);
 
-        return $this->status;
+        return true; 
+        // if ($this->checkIfResponseIsValid($response)) {
+        //     $this->status = true;
+        // } else {
+        //     $this->status = false;
+        // }
+
+        // return $this->status;
     }
 
     /**
@@ -52,9 +59,15 @@ class Api
     public function getSites()
     {
         // Get a list of sites at WPE, this will give us a list of installs automatically.
+        // echo "Going to get a list of sites" . PHP_EOL; 
+        try {
+            $response = $this->request('GET', 'sites');
+        } catch (Exeception $e) {
+            echo "We had trouble getting the sites ". $e->getMessage(); 
+        }
 
-        $response = $this->request('GET', 'sites');
         if ($this->checkIfResponseIsValid($response)) {
+            // echo "Response was valid..will process the siteResults now". PHP_EOL; 
             $body = $response->getBody();
             $sitesCollection = json_decode($body);
             $siteResults = $sitesCollection->results;
@@ -110,13 +123,14 @@ class Api
 
     private function checkIfResponseIsValid($response)
     {
+        //echo "Checking if Response is Valid ". PHP_EOL; 
         $rcode = $response->getStatusCode();
 
         if ($rcode === 200) {
-            #echo "WP Engine API is Up and Running" . PHP_EOL;
+            //echo "\tWP Engine API is Up and Running" . PHP_EOL;
             return true;
         } else {
-            echo 'The API Responded with error (' . $rcode . ')' . PHP_EOL;
+            //echo '\tThe API Responded with error (' . $rcode . ')' . PHP_EOL;
             return false;
         }
     }

@@ -16,7 +16,8 @@ if ($client->checkStatus() === false) {
 }
 
 $sites = $client->getSites();
-
+#print_r($sites); 
+#die; 
 $csvHeader = ['account_name', 'account_id', 'site_id', 'site name', 'install id', 'install name', 'install environment', 'install cname', 'php version', 'is multisite', 'primary domain'];
 //we create the CSV into memory
 $csv = Writer::createFromFileObject(new SplTempFileObject());

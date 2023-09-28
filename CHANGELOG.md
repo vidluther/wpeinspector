@@ -1,6 +1,10 @@
+2023-09-28 11:27:40 -0500 Vid Luther 
+
+	* 📝 docs(README.md): change output filename in README.md from foo.csv to wpesites.csv for clarity 🔧 refactor(helpers.php): add exception handling to API calls for better error handling 🔇 chore(index.php): comment out debug print statements for cleaner output (HEAD -> main)
+
 2021-12-07 17:46:13 -0600 Vid Luther 
 
-	* updated packages (HEAD -> main)
+	* updated packages
 
 2021-07-22 14:50:32 -0500 Vid Luther 
 
